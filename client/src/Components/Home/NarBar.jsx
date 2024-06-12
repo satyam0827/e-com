@@ -1,5 +1,3 @@
-
-
 import { Typography, Box, styled } from '@mui/material'; 
 
 import { navData } from '../../constant/data';
@@ -16,7 +14,7 @@ const Component = styled(Box)(({ theme }) => ({
 
 const Container = styled(Box)`
     padding: 12px 8px;
-    text-align: center
+    text-align: center;
 `
 
 const Text = styled(Typography)`
@@ -29,9 +27,9 @@ const NavBar = () => {
     return (
         <Component>
             {
-                navData.map(temp => (
-                    <Container>
-                        <img src={temp.url} style={{  width: 64 }} />
+                navData.map((temp, index) => (
+                    <Container key={index}>
+                        <img src={temp.url} style={{ width: 64 }} alt={temp.text} />
                         <Text>{temp.text}</Text>
                     </Container>
                 ))
